@@ -1,0 +1,55 @@
+import React, { useState } from 'react';
+import { Carousel } from 'react-bootstrap';
+import banner1 from '../../../images/banner/banner1.jpg'
+import banner2 from '../../../images/banner/banner2.jpg'
+import banner3 from '../../../images/banner/banner3.jpg'
+
+const Banner = () => {
+    const [index, setIndex] = useState(0);
+
+    const handleSelect = (selectedIndex, e) => {
+        setIndex(selectedIndex);
+    };
+
+    return (
+        <Carousel activeIndex={index} onSelect={handleSelect}>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={banner1}
+                    alt="First slide"
+                />
+                <Carousel.Caption>
+                    <h3 style={{ color: 'black', fontFamily: 'cookie', fontSize: '50px' }}>Welcome to Sabbir Bake's</h3>
+                    <p style={{ color: 'black', fontFamily: 'cookie', fontSize: '25px' }}>Get yourself lost in the world of cakes & bunch of flavors...</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={banner2}
+                    alt="Second slide"
+                />
+
+                <Carousel.Caption>
+                    <h3 style={{ color: '#9f5314', fontFamily: 'cookie', fontSize: '50px' }}>Welcome to Sabbir Bake's</h3>
+                    <p style={{ color: '#4e2706', fontFamily: 'cookie', fontSize: '25px' }}>Get yourself lost in the world of cakes & bunch of flavors...</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item>
+                <img
+                    className="d-block w-100"
+                    src={banner3}
+                    alt="Third slide"
+                />
+
+                <Carousel.Caption>
+                    <h3 style={{ color: '#f7563e', fontFamily: 'cookie', fontSize: '50px' }}>Welcome to Sabbir Bake's</h3>
+                    <p style={{ color: '#c43d28', fontFamily: 'cookie', fontSize: '25px' }}>Get yourself lost in the world of cakes & bunch of flavors...</p>
+                </Carousel.Caption>
+            </Carousel.Item>
+        </Carousel>
+    );
+};
+
+export default Banner;

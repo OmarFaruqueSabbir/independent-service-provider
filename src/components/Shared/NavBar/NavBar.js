@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import logo from "../../../images/cake.svg"
 
+
 const NavBar = () => {
     return (
         <>
@@ -9,7 +10,7 @@ const NavBar = () => {
                 <Container>
                     <Navbar.Brand href="#home">
                         <div className='d-flex justify-content-center align-items-center'>
-                            <span className='pe-2' style={{ color: 'orange', fontSize:'25px',fontWeight:'bold' }}>Sabbir Bakes</span>
+                            <span className='pe-2' style={{ color: 'orange', fontSize:'28px',fontWeight: 'lighter',fontFamily:'merienda' }}>Sabbir Bake's</span>
                             <img src={logo} height={35} alt="" />
                         </div>
 
@@ -20,11 +21,10 @@ const NavBar = () => {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#features">Services</Nav.Link>
-                            <Nav.Link href="#pricing">Blogs</Nav.Link>
-                            <Nav.Link href="#pricing">About</Nav.Link>
-                            <Nav.Link href="#deets">Login</Nav.Link>
-
+                            <Nav.Link style={{fontSize:'18px'}} className='navlink' href="#features">Services</Nav.Link>
+                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="#pricing">Blogs</Nav.Link>
+                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="#pricing">About</Nav.Link>
+                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="#deets">Login</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
