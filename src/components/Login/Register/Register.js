@@ -58,7 +58,7 @@ const Register = () => {
         navigate('/login');
     }
 
-    const [createUserWithEmailAndPassword, user, loading, hookError] =
+    const [createUserWithEmailAndPassword, user, loading, error2] =
         useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true })
 
         useEffect(() => {
@@ -68,8 +68,6 @@ const Register = () => {
         }, [user]);
 
         
-
-
     const handleSubmit = (event) => {
         event.preventDefault();
 
@@ -78,13 +76,13 @@ const Register = () => {
     }
 
     useEffect(() => {
-        if (hookError) {
-            switch (hookError?.code) {
+        if (error2) {
+            switch (error2?.code) {
                 default:
                     toast("❌ user exists or something went wrong!!");
             }
         }
-    }, [hookError]);
+    }, [error2]);
     return (
         <div className="container-fluid">
             <section className='my-5 section'>
@@ -105,7 +103,7 @@ const Register = () => {
                             {errors?.password && <p className="text-danger">{errors.password}</p>}
                         </div>
                         <div className="form-group">
-                            <button className="btn btn-primary btn-block" type="submit">Sign In</button>
+                            <button className="btn btn-primary btn-block mb-2" type="submit">Sign Up</button>
                         </div>
                         <p className="forgot">Already Signed Up? <span onClick={navigateLogin} className='text-primary'>Please Login</span> </p>
                         <ToastContainer />

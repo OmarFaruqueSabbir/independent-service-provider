@@ -2,19 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
-    const { name, img,price,description } = service;
+    const { name, img, price, description } = service;
     return (
         <div className='g-4 col-sm-12 col-md-6 col-lg-4'>
             <div className="card" style={{ width: "20rem" }}>
                 <img src={img} className="card-img-top" alt="..." />
                 <div className="card-body">
-                    <h5 style={{ fontFamily: "cookie",fontSize:'35px' }} className="card-title">{name}</h5>
+                    <h5 style={{ fontFamily: "cookie", fontSize: '35px' }} className="card-title">{name}</h5>
                     <p className="card-text text-start fst-normal">{description}</p>
-                    <p className="card-text  fst-normal"><span style={{ fontWeight:'bold'}}>Price: </span>${price}</p>
-                    
-                    <button  className="btn btn-danger">Check Here</button>
-                    
-                    
+                    <p className="card-text  fst-normal"><span style={{ fontWeight: 'bold' }}>Price: </span>${price}</p>
+                    <Link to='/checkout'>
+                        <button className="btn btn-danger">Check Here</button>
+                    </Link>
+
+
+
                 </div>
             </div>
         </div>

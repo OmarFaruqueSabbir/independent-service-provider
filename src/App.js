@@ -6,6 +6,8 @@ import NavBar from './components/Shared/NavBar/NavBar';
 import Footer from './components/Shared/Footer/Footer';
 import Register from './components/Login/Register/Register';
 import Login from './components/Login/Login/Login';
+import RequireAuth from './components/Login/RequireAuth/RequireAuth';
+import CheckOut from './components/CheckOut/CheckOut';
 
 
 function App() {
@@ -15,8 +17,12 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}/>
         <Route path='/home' element={<Home />}/>
+        <Route path='/checkout' element={<RequireAuth>
+          <CheckOut />
+        </RequireAuth>}/>
         <Route path='/register' element={<Register />}/>
         <Route path='/login' element={<Login />}/>
+        
         
       </Routes>
       <Footer />
