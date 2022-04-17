@@ -25,7 +25,7 @@ const NavBar = () => {
                             <Nav.Link style={{fontSize:'18px'}} className='navlink' href="#services">Services</Nav.Link>
                             <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="blogs">Blogs</Nav.Link>
                             <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="About">About</Nav.Link>
-                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="#Login">Login</Nav.Link>
+                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' as={Link} to='/login'>Login</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
