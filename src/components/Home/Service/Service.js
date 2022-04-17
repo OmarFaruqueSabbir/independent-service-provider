@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
     const { name, img,price,description } = service;
@@ -10,7 +11,10 @@ const Service = ({ service }) => {
                     <h5 style={{ fontFamily: "cookie",fontSize:'35px' }} className="card-title">{name}</h5>
                     <p className="card-text text-start fst-normal">{description}</p>
                     <p className="card-text  fst-normal"><span style={{ fontWeight:'bold'}}>Price: </span>${price}</p>
-                    <button href="#" className="btn btn-danger">Check Here</button>
+                    
+                    <button  className="btn btn-danger">Check Here</button>
+                    
+                    
                 </div>
             </div>
         </div>

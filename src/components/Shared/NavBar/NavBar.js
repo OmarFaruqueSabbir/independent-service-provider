@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import logo from "../../../images/cake.svg"
 
 
@@ -8,7 +9,7 @@ const NavBar = () => {
         <>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand as={Link} to="/">
                         <div className='d-flex justify-content-center align-items-center'>
                             <span className='pe-2' style={{ color: 'orange', fontSize:'28px',fontWeight: 'lighter',fontFamily:'merienda' }}>Sabbir Bake's</span>
                             <img src={logo} height={35} alt="" />
@@ -21,10 +22,10 @@ const NavBar = () => {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link style={{fontSize:'18px'}} className='navlink' href="#features">Services</Nav.Link>
-                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="#pricing">Blogs</Nav.Link>
-                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="#pricing">About</Nav.Link>
-                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="#deets">Login</Nav.Link>
+                            <Nav.Link style={{fontSize:'18px'}} className='navlink' href="#services">Services</Nav.Link>
+                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="blogs">Blogs</Nav.Link>
+                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="About">About</Nav.Link>
+                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="#Login">Login</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
