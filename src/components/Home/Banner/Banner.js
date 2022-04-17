@@ -20,8 +20,8 @@ const Banner = () => {
                     alt="First slide"
                 />
                 <Carousel.Caption>
-                    <h3 style={{ color: 'black', fontFamily: 'cookie', fontSize: '50px' }}>Welcome to Sabbir Bake's</h3>
-                    <p style={{ color: 'black', fontFamily: 'cookie', fontSize: '25px' }}>Get yourself lost in the world of cakes & bunch of flavors...</p>
+                    <h3 style={{ color: 'black', fontFamily: 'cookie', fontSize: '43px' }}>Welcome to Sabbir Bake's</h3>
+                    <p className='' style={{ color: 'black', fontFamily: 'poppins', fontSize: '15px' }}>Get yourself lost in the world of cakes & bunch of flavors...</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -32,8 +32,8 @@ const Banner = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3 style={{ color: '#9f5314', fontFamily: 'cookie', fontSize: '50px' }}>Welcome to Sabbir Bake's</h3>
-                    <p style={{ color: '#4e2706', fontFamily: 'cookie', fontSize: '25px' }}>Get yourself lost in the world of cakes & bunch of flavors...</p>
+                    <h3 style={{ color: '#9f5314', fontFamily: 'cookie', fontSize: '43px' }}>Welcome to Sabbir Bake's</h3>
+                    <p style={{ color: '#4e2706', fontFamily: 'poppins', fontSize: '15px' }}>Get yourself lost in the world of cakes & bunch of flavors...</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -44,8 +44,8 @@ const Banner = () => {
                 />
 
                 <Carousel.Caption>
-                    <h3 style={{ color: '#f7563e', fontFamily: 'cookie', fontSize: '50px' }}>Welcome to Sabbir Bake's</h3>
-                    <p style={{ color: '#c43d28', fontFamily: 'cookie', fontSize: '25px' }}>Get yourself lost in the world of cakes & bunch of flavors...</p>
+                    <h3 style={{ color: 'white', fontFamily: 'cookie', fontSize: '43px' }}>Welcome to Sabbir Bake's</h3>
+                    <p style={{ color: 'white', fontFamily: 'poppins', fontSize: '15px' }}>Get yourself lost in the world of cakes & bunch of flavors...</p>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>

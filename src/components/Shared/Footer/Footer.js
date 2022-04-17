@@ -36,7 +36,7 @@ const Footer = () => {
                             <a href="#"><FiInstagram /></a>
                         </div>
                     </div>
-                    <p class="copyright">Company Name © 2018</p>
+                    <p class="copyright">All Rights Reserved By Sabbir Bake's ©  2021-22</p>
                 </div>
             </footer>
         </div>
