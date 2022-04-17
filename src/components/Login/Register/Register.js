@@ -104,7 +104,7 @@ const Register = () => {
                             {errors?.password && <p className="text-danger">{errors.password}</p>}
                         </div>
                         <div className="form-group">
-                            <button className="btn btn-primary btn-block" type="submit">Log In</button>
+                            <button className="btn btn-primary btn-block" type="submit">Sign In</button>
                         </div>
                         <p className="forgot">Already Signed Up? <span onClick={navigateLogin} className='text-primary'>Please Login</span> </p>
                         <ToastContainer />

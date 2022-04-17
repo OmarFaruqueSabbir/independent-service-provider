@@ -1,10 +1,111 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../../firebas.init';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
+    const [userData, setUserData] = useState({
+        email: "",
+        password: "",
+        confirmPass: "",
+    });
+    const [errors, setErrors] = useState({
+        email: "",
+        password: "",
+        general: "",
+    });
+
+    const handleEmail = (event) => {
+        const emailRegex = /\S+@\S+\.\S+/;
+        const validMail = emailRegex.test(event.target.value);
+
+        if (validMail) {
+            setUserData({ ...userData, email: event.target.value });
+            setErrors({ ...errors, email: "" });
+        } else {
+            setErrors({ ...errors, email: "Please provide valid email" });
+            setUserData({ ...userData, email: "" });
+        }
+
+        // setEmail(e.target.value);
+    };
+
+
+
+    const handlePassword = (event) => {
+        const passwordRegex = /.{6,}/;
+        const validPassword = passwordRegex.test(event.target.value);
+
+        if (validPassword) {
+            setUserData({ ...userData, password: event.target.value });
+            setErrors({ ...errors, password: "" });
+        } else {
+            setErrors({ ...errors, password: "Input 6 characters!" });
+            setUserData({ ...userData, password: "" });
+        }
+    };
+
+    const [signInWithEmail, user, loading, error1] = useSignInWithEmailAndPassword(auth);
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        signInWithEmail(userData.email, userData.password);
+        // navigate('/home');
+    }
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+    const navigateSign = () => {
+        navigate('/register');
+    }
+
+    useEffect(() => {
+        if (user) {
+            navigate(from);
+        }
+    }, [user]);
+
+    let errorElement;
+
+    if(error1){
+        errorElement =
+        <p className='text-danger'>Error: {error1?.message}
+        </p>
+    }
+    
     return (
-        <div>
-            
-        </div>
+        <div className="container-fluid">
+            <section className='my-5 section'>
+                <div className="login-dark">
+                    <form onSubmit={handleSubmit}>
+                        <h2 className="sr-only">Login Form</h2>
+                        <div className="illustration"><i className="icon ion-ios-locked-outline"></i>
+                        </div>
+                        <div className="form-group">
+                            <input className="form-control" type="email" name="email" placeholder="Email" onChange={handleEmail} required />
+                            {errors?.email && <p className="text-danger">{errors.email}</p>}
+                        </div>
+                        <div className="form-group">
+                            <input className="form-control" type="password" name="password" placeholder="Password" onChange={handlePassword} required />
+
+                            {errors?.password && <p className="text-danger">{errors.password}</p>}
+                        </div>
+                        <div className="form-group">
+                            <button className="btn btn-primary btn-block" type="submit">Log In</button>
+                        </div>
+                        <p className="forgot">New Here? <span onClick={navigateSign} className='text-primary'>Please Register</span> </p>
+                        <ToastContainer />
+                    </form>
+                    {
+                        errorElement
+                    }
+                </div>
+            </section>
+        </div >
     );
 };
 
