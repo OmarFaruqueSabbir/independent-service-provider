@@ -5,6 +5,7 @@ import './Register.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLocation, useNavigate } from 'react-router-dom';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
     const [userData, setUserData] = useState({
@@ -108,6 +109,7 @@ const Register = () => {
                         </div>
                         <p className="forgot">Already Signed Up? <span onClick={navigateLogin} className='text-primary'>Please Login</span> </p>
                         <ToastContainer />
+                        <SocialLogin />
                     </form>
                 </div>
             </section>

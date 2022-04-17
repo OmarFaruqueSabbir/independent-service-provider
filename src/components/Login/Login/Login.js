@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebas.init';
 import { ToastContainer, toast } from 'react-toastify';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
     const [userData, setUserData] = useState({
@@ -47,12 +48,25 @@ const Login = () => {
     };
 
     const [signInWithEmail, user, loading, error1] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
+        auth
+      );
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
         signInWithEmail(userData.email, userData.password);
         // navigate('/home');
+    }
+
+    const PasswordReset = async () => {
+        const emailReset = userData.email;
+        if(emailReset){
+            await sendPasswordResetEmail(emailReset);
+            toast('Sent email');
+        }else{
+            toast('please enter your mail');
+        }
     }
 
     const navigate = useNavigate();
@@ -76,7 +90,7 @@ const Login = () => {
         <p className='text-danger'>Error: {error1?.message}
         </p>
     }
-    
+
     return (
         <div className="container-fluid">
             <section className='my-5 section'>
@@ -95,16 +109,20 @@ const Login = () => {
                             {errors?.password && <p className="text-danger">{errors.password}</p>}
                         </div>
                         <div className="form-group">
-                            <button className="btn btn-primary btn-block" type="submit">Log In</button>
+                            <button className="btn btn-primary btn-block mb-2 px-4" type="submit">Log In</button>
                         </div>
-                        <p className="forgot">New Here? <span onClick={navigateSign} className='text-primary'>Please Register</span> </p>
+                        <p className="forgot">New Here? <span onClick={navigateSign} className='text-primary ps-2'>Please Register</span> </p>
+                        <p>Forget Password?.. <span className='text-primary ps-2' onClick={PasswordReset}>Reset Password</span> </p>
+                        
                         <ToastContainer />
+                        <SocialLogin />
                     </form>
                     {
                         errorElement
                     }
                 </div>
             </section>
+            
         </div >
     );
 };

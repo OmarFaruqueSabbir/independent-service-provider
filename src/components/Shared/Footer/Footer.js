@@ -29,11 +29,11 @@ const Footer = () => {
                             <h3>About Me</h3>
                             <p>Hello there, I'm Sabbir.A professional cake artist.</p>
                         </div>
-                        <div className="col item social">
-                            <a href="#"><FiTwitter/> </a>
-                            <a href="#"><FiFacebook /></a>
-                            <a href="#"><FaSnapchat /></a>
-                            <a href="#"><FiInstagram /></a>
+                        <div className="col item social pt-3">
+                            <a href="#"><FiTwitter className='pb-1' /> </a>
+                            <a href="#"><FiFacebook className='pb-1' /></a>
+                            <a href="#"><FaSnapchat className='pb-1' /></a>
+                            <a href="#"><FiInstagram className='pb-1' /></a>
                         </div>
                     </div>
                     <p className="copyright">All Rights Reserved By Sabbir Bake's ©  2021-22</p>
