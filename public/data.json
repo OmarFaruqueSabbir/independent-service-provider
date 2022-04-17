@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "name": "Wedding Package",
+        "price": "300-500",
+        "description": "Weddings are one of the special event in our life, here we have the package which can preserve rich taste & flavor on your mind forever.",
+        "img": "https://i.ibb.co/MBqcchT/service1.jpg"
+    },
+    {
+        "id": 2,
+        "name": "Birthday Special",
+        "price": "200-300",
+        "description": "Birthdays are special for all of ages, Birthday special package will surely bring smiles on faces of our clients. Customization are also available.",
+        "img": "https://i.ibb.co/k5TM4Ty/service2.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Corporate Package",
+        "price": "250-455",
+        "description": "If you are looking for corporate special cake, here you will get the desired one. Custom decorations are available as per our clients demand.",
+        "img": "https://i.ibb.co/fFsDpf1/service3.jpg"
+    }
+    
+]
