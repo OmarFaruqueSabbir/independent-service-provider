@@ -54,11 +54,9 @@ const Login = () => {
         }
     };
 
-
+    
 
     let errorElement;
-
-
     if (error1) {
         errorElement =
             <p className='text-danger'>Error: {error1?.message}

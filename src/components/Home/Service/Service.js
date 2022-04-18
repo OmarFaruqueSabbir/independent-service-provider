@@ -14,9 +14,6 @@ const Service = ({ service }) => {
                     <Link to='/checkout'>
                         <button className="btn btn-danger">Check Here</button>
                     </Link>
-
-
-
                 </div>
             </div>
         </div>

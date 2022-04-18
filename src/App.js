@@ -10,6 +10,7 @@ import RequireAuth from './components/Login/RequireAuth/RequireAuth';
 import CheckOut from './components/CheckOut/CheckOut';
 import AboutMe from './components/AboutMe/AboutMe';
 import Blogs from './components/Blogs/Blogs';
+import Notfound from './components/Shared/Notfound/Notfound';
 
 
 function App() {
@@ -26,8 +27,7 @@ function App() {
         </RequireAuth>}/>
         <Route path='/register' element={<Register />}/>
         <Route path='/login' element={<Login />}/>
-        
-        
+        <Route path='*' element={<Notfound />}/>
       </Routes>
       <Footer />
     </div>
