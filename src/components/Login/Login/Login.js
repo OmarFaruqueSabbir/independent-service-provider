@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebas.init';
 import { ToastContainer, toast } from 'react-toastify';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import './login.css'
 
 const Login = () => {
     const [userData, setUserData] = useState({
@@ -16,6 +17,13 @@ const Login = () => {
         password: "",
         general: "",
     });
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+    const [signInWithEmail, user, loading, error1] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
+        auth);
 
     const handleEmail = (event) => {
         const emailRegex = /\S+@\S+\.\S+/;
@@ -33,7 +41,6 @@ const Login = () => {
     };
 
 
-
     const handlePassword = (event) => {
         const passwordRegex = /.{6,}/;
         const validPassword = passwordRegex.test(event.target.value);
@@ -47,10 +54,22 @@ const Login = () => {
         }
     };
 
-    const [signInWithEmail, user, loading, error1] = useSignInWithEmailAndPassword(auth);
-    const [sendPasswordResetEmail, sending, error] = useSendPasswordResetEmail(
-        auth
-      );
+
+
+    let errorElement;
+
+
+    if (error1) {
+        errorElement =
+            <p className='text-danger'>Error: {error1?.message}
+            </p>
+    }
+
+    useEffect(() => {
+        if (user) {
+            navigate(from, { replace: true });
+        }
+    }, [user]);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -59,52 +78,38 @@ const Login = () => {
         // navigate('/home');
     }
 
+
     const PasswordReset = async () => {
         const emailReset = userData.email;
-        if(emailReset){
+        if (emailReset) {
             await sendPasswordResetEmail(emailReset);
             toast('Sent email');
-        }else{
+        } else {
             toast('please enter your mail');
         }
     }
-
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
 
     const navigateSign = () => {
         navigate('/register');
     }
 
-    useEffect(() => {
-        if (user) {
-            navigate(from);
-        }
-    }, [user]);
 
-    let errorElement;
-
-    if(error1){
-        errorElement =
-        <p className='text-danger'>Error: {error1?.message}
-        </p>
-    }
 
     return (
         <div className="container-fluid">
-            <section className='my-5 section'>
+            <section className='my-5'>
                 <div className="login-dark">
+
                     <form onSubmit={handleSubmit}>
                         <h2 className="sr-only">Login Form</h2>
                         <div className="illustration"><i className="icon ion-ios-locked-outline"></i>
                         </div>
                         <div className="form-group">
-                            <input className="form-control" type="email" name="email" placeholder="Email" onChange={handleEmail} required />
+                            <input className="form-control" type="email" name="email" placeholder="Email" onBlur={handleEmail} required />
                             {errors?.email && <p className="text-danger">{errors.email}</p>}
                         </div>
                         <div className="form-group">
-                            <input className="form-control" type="password" name="password" placeholder="Password" onChange={handlePassword} required />
+                            <input className="form-control" type="password" name="password" placeholder="Password" onBlur={handlePassword} required />
 
                             {errors?.password && <p className="text-danger">{errors.password}</p>}
                         </div>
@@ -113,16 +118,14 @@ const Login = () => {
                         </div>
                         <p className="forgot">New Here? <span onClick={navigateSign} className='text-primary ps-2'>Please Register</span> </p>
                         <p>Forget Password?.. <span className='text-primary ps-2' onClick={PasswordReset}>Reset Password</span> </p>
-                        
+                        {
+                            errorElement
+                        }
                         <ToastContainer />
                         <SocialLogin />
                     </form>
-                    {
-                        errorElement
-                    }
                 </div>
             </section>
-            
         </div >
     );
 };

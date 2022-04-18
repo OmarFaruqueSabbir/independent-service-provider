@@ -27,10 +27,12 @@ const NavBar = () => {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link style={{fontSize:'18px'}} className='navlink' href="#services">Services</Nav.Link>
-                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' as={Link} to='/C=checkout'>CheckOut</Nav.Link>
+                            {/* <Nav.Link style={{fontSize:'18px'}} className='navlink' href="home#services">Services</Nav.Link> */}
+
+                            <Nav.Link style={{fontSize:'18px'}}  
+                            className='navlink' as={Link} to='/checkout'>CheckOut</Nav.Link>
                             <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="blogs">Blogs</Nav.Link>
-                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="About">About</Nav.Link>
+                            <Nav.Link style={{fontSize:'18px'}}  className='navlink' as={Link} to='/about' >About</Nav.Link>
                             {
                                 user?
                                 <button className='btn btn-primary' onClick={()=> signOut(auth)}>signOut</button>
