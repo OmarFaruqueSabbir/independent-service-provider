@@ -4,8 +4,8 @@ import me from '../../images/me2.jpg'
 
 const AboutMe = () => {
     return (
-        <div className=''>
-            <section className='sctn' >
+        <div className='container'>
+            <section className='sctn row' >
                 <div className="image1">
                     <img src={me} alt='' />
                 </div>

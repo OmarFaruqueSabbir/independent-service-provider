@@ -11,10 +11,10 @@
     display: flex;
 }
 .image1 img{
-    height:60vh;
+    height: 60vh;
     margin:50px auto;
     border-radius:10px;
-    border: 1px solid brown;
+    border: 2px solid brown;
 }
 .content1{
     background-color: #ffffff;
@@ -47,26 +47,12 @@
     line-height: 1.7;
     color:#070000
 }
-.links{
-    margin: 15px 0;
-}
-.links li{
-    border: 2px solid #4158D0;
-    list-style: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    width: 160px;
-    text-align: center;
-}
-
-
-
 
 
 /*****************/
 
-@media(max-width: 900px){
-    section{
+@media(max-width: 768px){
+    .sctn{
         grid-template-columns: 1fr;
         width: 100%;
         border-radius: none;
@@ -89,16 +75,5 @@
     .content p{
         font-size: 14px;
     }
-    .links li a{
-        font-size: 14px;
-    }
-    .links{
-        margin: 5px 0;
-    }
-    .links li{
-        padding: 6px 10px;
-    }
-    .icons li i{
-        font-size: 15px;
-    }
+
 }

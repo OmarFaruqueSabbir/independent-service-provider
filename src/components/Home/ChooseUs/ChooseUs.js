@@ -12,8 +12,8 @@ const ChooseUs = () => {
                             <div className="card card-just-text" data-background="color" data-color="blue" data-radius="none">
                                 <div className="content">
                                     <h6 className="category">Choose us Because:</h6>
-                                    <h4 className="title"><span href="#">Rich Makings</span></h4>
-                                    <p className="description">Sabbir Bake's produces every cake items ensuring rich taste,flavor & measuring hygiene of course </p>
+                                    <h4 className="title"><span href="#">Rich Taste</span></h4>
+                                    <p className="description">Sabbir Bake's produces every cake items ensuring rich taste,flavor & maintaining hygiene of course</p>
                                 </div>
                             </div>
                         </div>
