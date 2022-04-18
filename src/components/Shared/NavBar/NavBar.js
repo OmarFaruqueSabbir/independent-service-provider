@@ -26,7 +26,7 @@ const NavBar = () => {
 
                         </Nav>
                         <Nav>
-                            <Nav.Link style={{fontSize:'18px'}} className='navlink' as={Link} to="home#services">Services</Nav.Link>
+                            <Nav.Link style={{fontSize:'18px'}} className='navlink' as={Link} to="/">Home</Nav.Link>
                             <Nav.Link style={{fontSize:'18px'}}  
                             className='navlink' as={Link} to='/checkout'>CheckOut</Nav.Link>
                             <Nav.Link style={{fontSize:'18px'}}  className='navlink' href="blogs">Blogs</Nav.Link>
