@@ -9,7 +9,7 @@ const CheckOut = () => {
                     <div className="thumbnail">
                         <img className='h-50 w-50 rounded' src={check} alt="..." />
                         <div className="caption">
-                            <h3 className='pt-2'>Checkout Here</h3>
+                            <h3 className='pt-2'>Please Checkout Here</h3>
                             <p>...</p>
                             <p><a href="#a" className="btn btn-primary" role="button">Checked In</a> <a href="#b" className="btn btn-default" role="button">Checked out</a></p>
                         </div>
